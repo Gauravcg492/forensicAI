@@ -1,39 +1,42 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
+import { useState } from 'react';
 
 function Hello() {
+  const [filePath, setFilePath] = useState('');
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+
+  const handleFileExplorer = async () => {
+    // Use the secure API exposed by the preload script
+    const selectedFilePath = await window.electron.openFile();
+    if (selectedFilePath) {
+      setFilePath(selectedFilePath);
+      console.log('Selected file path:', selectedFilePath);
+    }
+  };
+
+  const handleButton = () => {
+    console.log('Analyzing file:', filePath);
+    if (filePath) {
+      window.electron.analyze(filePath);
+    }
+  };
+
   return (
     <div>
-      <div className="Hello">
+      <div className="main">
         <img width="200" alt="icon" src={icon} />
       </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
+      <h1>Forensic AI</h1>
+      <div className="main">
+        <button type="button" onClick={handleFileExplorer}>
+          Browse File
+        </button>
+        <p>Selected File Path: {filePath}</p>
+        <button type="button" onClick={handleButton}>
+          Analyze
+        </button>
       </div>
     </div>
   );
