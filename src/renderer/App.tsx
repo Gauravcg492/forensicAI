@@ -6,6 +6,7 @@ import { useState } from 'react';
 function Hello() {
   const [filePath, setFilePath] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleFileExplorer = async () => {
     // Use the secure API exposed by the preload script
@@ -16,12 +17,37 @@ function Hello() {
     }
   };
 
-  const handleButton = () => {
+  const handleButton = async () => {
     console.log('Analyzing file:', filePath);
     if (filePath) {
-      window.electron.analyze(filePath);
+      setIsAnalyzing(true);
+      window.electron.analyze(filePath).then((message) => {
+        setMessage(message);
+        setIsAnalyzing(false);
+      });
     }
   };
+
+  if (isAnalyzing) {
+    // Render a loading spinner or message while analyzing
+    return (
+      <div className="loading">
+        <h1>Analyzing...</h1>
+        <div className="spinner"></div>
+        <p>Please wait while the analysis is being performed.</p>
+      </div>
+    );
+  }
+
+  if (message) {
+    // Render the analysis result
+    return (
+      <div>
+        <h1>Analysis Result</h1>
+        <p>{message}</p>
+      </div>
+    );
+  }
 
   return (
     <div>

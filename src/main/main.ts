@@ -43,8 +43,14 @@ ipcMain.handle('dialog:openFile', async () => {
   return result.filePaths[0]; // Return the selected file path
 });
 
+const sleep = (ms: number): Promise<void> => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 ipcMain.handle('analyze:file', async (_, filePath) => {
+  await sleep(20000);
   analyze(filePath);
+  return 'Analysis complete';
 });
 
 if (process.env.NODE_ENV === 'production') {
