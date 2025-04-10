@@ -6,10 +6,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || "YOUR_API_KEY", // Replace with your API key
 });
 
-export async function generateJSON() {
+export async function generateJSON(promptFile = "./prompt.txt") {
   try {
     // Read the prompt from an external file named prompt.txt
-    const customPrompt = await readFile("./prompt.txt", "utf8");
+    const customPrompt = await readFile(promptFile, "utf8");
 
     // Call the chat completions endpoint using the prompt from the file
     const response = await openai.chat.completions.create({

@@ -1,0 +1,2191 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 4628
+>>
+stream
+0.200025 w
+0 G
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0 g
+30. 752. Td
+(fsstat Forensic Report) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+30. 732. Td
+(1. General File System Information) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 712. Td
+(File System Type: NTFS) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 692. Td
+(Volume Serial Number: 4C7E1AB47E1A96B4) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 672. Td
+(OEM Name: NTFS) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 652. Td
+(Volume Name: New Volume0) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 632. Td
+(Version: Windows XP) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 612. Td
+(Indicates the type of file system \(e.g., NTFS\). This is essential for understanding the structure and) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 598. Td
+(forensic artifacts specific to the file system. A unique identifier for the volume. It helps in matching) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 584. Td
+(volumes during multi-disk forensic investigations. Represents the OEM name of the file system \(typically) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 570. Td
+(the same as the file system type for NTFS\). Useful for verifying the file system’s origin. The label) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 556. Td
+(assigned to the volume. It can be used to quickly identify the partition in investigations. The version of) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 542. Td
+(the file system. For NTFS, this can help in determining compatibility and potential forensic analysis) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 528. Td
+(nuances.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+30. 494. Td
+(2. Metadata Information) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 474. Td
+(First Cluster of MFT: 8533) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 454. Td
+(First Cluster of MFT Mirror: 2) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 434. Td
+(Size of MFT Entries: 1024 bytes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 414. Td
+(Size of Index Records: 4096 bytes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 394. Td
+(Range: 0 - 256) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 374. Td
+(Root Directory: 5) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 354. Td
+(Indicates where the Master File Table \(MFT\) begins. The MFT is central to NTFS and crucial for file) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 340. Td
+(record analysis. Specifies the location of the MFT mirror, which is used for redundancy. Its location helps) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 326. Td
+(verify the integrity of the MFT. Shows the size of each MFT entry. Understanding this helps in) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 312. Td
+(interpreting file records stored in the MFT. Indicates the size of the index records used in the file system.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 298. Td
+(This is important for analyzing the structure of directories and indexes. Provides a range related to) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 284. Td
+(metadata information. This may denote limits or counts relevant to metadata entries. Specifies the root) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 270. Td
+(directory entry. This is key for navigating the file hierarchy in NTFS.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+30. 236. Td
+(3. Content Information) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 216. Td
+(Sector Size: 512 bytes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 196. Td
+(Cluster Size: 4096 bytes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 176. Td
+(Total Cluster Range: 0 - 25598) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 156. Td
+(Total Sector Range: 0 - 204798) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 136. Td
+(The size of a sector on the disk. It is fundamental for understanding disk geometry and storage) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 122. Td
+(allocation. The size of a cluster, which is a group of sectors. It influences how data is stored and how) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 108. Td
+(much slack space may exist. Specifies the range of clusters in the partition. This helps in determining) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 94. Td
+(the partition's capacity and structure. Specifies the range of sectors in the partition. This is important for) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+30. 80. Td
+(mapping the physical layout of the disk.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+30. 30. Td
+(Page 1 of 3) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 14889
+>>
+stream
+0.200025 w
+0 G
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+30. 752. Td
+(4. NTFS Attribute Definitions \($AttrDef\)) Tj
+ET
+0. G
+0.200025 w
+0. G
+0.200025 w
+0.5 g
+0.78 G
+0. w
+0.5 g
+30. 732. 60. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+39.25 718.5 Td
+(Attribute) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+90. 732. 40. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+95.0499999999999972 718.5 Td
+(Identif) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+103.9000000000000057 707. Td
+(ier) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+130. 732. 60. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+150.0500000000000114 718.5 Td
+(Size) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+144.8000000000000114 707. Td
+(Range) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+190. 732. 40. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+197. 718.5 Td
+(Flags) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+230. 732. 200. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+302.6000000000000227 718.5 Td
+(Description) Tj
+ET
+0. G
+0.200025 w
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 699. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+37.7000000000000028 685.5 Td
+($STANDA) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+34.5 674. Td
+(RD_INFOR) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+41.2000000000000028 662.5 Td
+(MATION) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 699. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 685.5 Td
+(16) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 699. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+147.3499999999999943 685.5 Td
+(48-72) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 699. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 685.5 Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 674. Td
+(nt) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 699. 200. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+248.75 685.5 Td
+(Contains standard metadata for files,) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+236.8999999999999773 674. Td
+(including timestamps and file permissions.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+247.8499999999999943 662.5 Td
+(The flags indicate that this attribute is) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+245.9499999999999886 651. Td
+(stored within the MFT entry \(resident\).) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 643. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+36.5499999999999972 629.5 Td
+($ATTRIBU) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+40.3999999999999986 618. Td
+(TE_LIST) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 643. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 629.5 Td
+(32) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 643. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 629.5 Td
+(No Limit) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 643. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 629.5 Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 618. Td
+(sident) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+230. 643. 200. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+235.4499999999999602 629.5 Td
+(Holds a list of attributes when there are too) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+258.25 618. Td
+(many to fit in a single MFT entry.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+239.7999999999999829 606.5 Td
+(Non-resident indicates that the attribute's) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+249.4499999999999886 595. Td
+(data is stored outside the MFT entry.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 587. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+37.1000000000000014 573.5 Td
+($FILE_NA) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+52.5499999999999972 562. Td
+(ME) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 587. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 573.5 Td
+(48) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 587. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+144.5999999999999943 573.5 Td
+(68-578) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 587. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 573.5 Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+204.4499999999999886 562. Td
+(nt,) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+197.8499999999999943 550.5 Td
+(Index) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 587. 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+259.5999999999999659 573.5 Td
+(Stores the file name and related) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+244.3499999999999659 562. Td
+(information. The 'Index' flag indicates it) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+254.5999999999999659 550.5 Td
+(may be used in directory indexing.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 542.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+34.8499999999999943 529. Td
+($OBJECT_) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+55. 517.5 Td
+(ID) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 542.5 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 529. Td
+(64) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 542.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+147.3499999999999943 529. Td
+(0-256) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 542.5 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 529. Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 517.5 Td
+(nt) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+230. 542.5 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+240.4999999999999432 529. Td
+(Used for object identification, providing a) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+240.7999999999999829 517.5 Td
+(unique identifier for files. Typically stored) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+273.8000000000000114 506. Td
+(resident in the MFT entry.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 498. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.3999999999999986 484.5 Td
+($SECURIT) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.1500000000000057 473. Td
+(Y_DESCRI) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+46.1500000000000057 461.5 Td
+(PTOR) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 498. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 484.5 Td
+(80) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 498. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 484.5 Td
+(No Limit) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 498. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 484.5 Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 473. Td
+(sident) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 498. 200. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+247.3499999999999659 484.5 Td
+(Contains security information such as) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+263.25 473. Td
+(access control lists \(ACLs\). Its) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+239.1999999999999886 461.5 Td
+(non-resident nature means the descriptor) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+260.5 450. Td
+(is stored outside the MFT entry.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 442. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+36.25 428.5 Td
+($VOLUME) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+42.8999999999999986 417. Td
+(_NAME) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 442. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+104.5 428.5 Td
+(96) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 442. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+147.3499999999999943 428.5 Td
+(2-256) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 442. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 428.5 Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 417. Td
+(nt) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+230. 442. 200. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+239.5999999999999659 428.5 Td
+(Stores the volume label of the partition. It) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+262.0499999999999545 417. Td
+(helps in identifying the volume.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 409. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+36.25 395.5 Td
+($VOLUME) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+37.5499999999999972 384. Td
+(_INFORM) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+45.3500000000000014 372.5 Td
+(ATION) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 409. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 395.5 Td
+(112) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 409. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+147.3499999999999943 395.5 Td
+(12-12) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 409. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 395.5 Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 384. Td
+(nt) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 409. 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+252.4499999999999886 395.5 Td
+(Provides additional volume-specific) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+243.7999999999999545 384. Td
+(information, stored resident in the MFT.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 364.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+45.2000000000000028 351. Td
+($DATA) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 364.5 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 351. Td
+(128) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 364.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 351. Td
+(No Limit) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 364.5 40. -44.5 re
+f
+1. g
+0.78 G
+0. w
+1. g
+230. 364.5 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+235. 351. Td
+(Holds the actual file data. Its size being 'No) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+248.3000000000000114 339.5 Td
+(Limit' indicates that the data is stored) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+262.4499999999999886 328. Td
+(separately from the MFT entry.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 320. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.7000000000000028 306.5 Td
+($INDEX_R) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+49.1499999999999986 295. Td
+(OOT) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 320. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 306.5 Td
+(144) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 320. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 306.5 Td
+(No Limit) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 320. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 306.5 Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 295. Td
+(nt) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 320. 200. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+235.9999999999999716 306.5 Td
+(Defines the root of a directory index, which) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+246.25 295. Td
+(is used to organize directory contents.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 287. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+36. 273.5 Td
+($INDEX_A) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.9499999999999957 262. Td
+(LLOCATIO) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+56.3999999999999986 250.5 Td
+(N) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 287. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 273.5 Td
+(160) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 287. 60. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 273.5 Td
+(No Limit) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 287. 40. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 273.5 Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 262. Td
+(sident) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+230. 287. 200. -56. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+241.6499999999999488 273.5 Td
+(Contains additional index entries that do) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+238.0999999999999943 262. Td
+(not fit within the $INDEX_ROOT attribute.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+237.1999999999999886 250.5 Td
+(Being non-resident, it is stored outside the) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+306.3999999999999773 239. Td
+(MFT entry.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 231. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+38.75 217.5 Td
+($BITMAP) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 231. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 217.5 Td
+(176) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 231. 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.75 217.5 Td
+(No Limit) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 231. 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 217.5 Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 206. Td
+(sident) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 231. 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+238.6999999999999886 217.5 Td
+(Used to track which clusters are in use. A) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+243.5999999999999659 206. Td
+(non-resident attribute stored separately) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+299.3000000000000114 194.5 Td
+(from the MFT.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 186.5 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+37.4499999999999957 173. Td
+($REPARS) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+38.6999999999999957 161.5 Td
+(E_POINT) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 186.5 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 173. Td
+(192) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 186.5 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.8499999999999943 173. Td
+(0-16384) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 186.5 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 173. Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 161.5 Td
+(sident) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+230. 186.5 200. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+236.3499999999999659 173. Td
+(Contains reparse point data, which is used) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+239.5999999999999659 161.5 Td
+(for directory junctions and symbolic links.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 153.5 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.9499999999999957 140. Td
+($EA_INFO) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+37.5999999999999943 128.5 Td
+(RMATION) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 153.5 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 140. Td
+(208) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 153.5 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+152.8499999999999943 140. Td
+(8-8) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 153.5 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.5500000000000114 140. Td
+(Reside) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+205.8499999999999943 128.5 Td
+(nt) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 153.5 200. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+255.7499999999999716 140. Td
+(Holds information about extended) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+236.5999999999999659 128.5 Td
+(attributes \(EA\), stored resident in the MFT.) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+30. 120.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+50.6499999999999986 107. Td
+($EA) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+90. 120.5 40. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 107. Td
+(224) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+130. 120.5 60. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.8499999999999943 107. Td
+(0-65536) Tj
+ET
+1. g
+0.78 G
+0. w
+1. g
+190. 120.5 40. -44.5 re
+f
+1. g
+0.78 G
+0. w
+1. g
+230. 120.5 200. -44.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+246.2999999999999545 107. Td
+(Contains the actual extended attribute) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+235.1999999999999318 95.5 Td
+(data. Its size can vary widely depending on) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+296. 84. Td
+(the EA content.) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 76. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.8999999999999986 62.5 Td
+($LOGGED) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+35.9500000000000028 51. Td
+(_UTILITY_) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 76. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+101.75 62.5 Td
+(256) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 76. 60. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+141.8499999999999943 62.5 Td
+(0-65536) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 76. 40. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+194.8499999999999943 62.5 Td
+(Non-re) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+196.75 51. Td
+(sident) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 76. 200. -33. re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+249.3499999999999943 62.5 Td
+(Used for logging purposes by the file) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+267.25 51. Td
+(system, stored non-resident.) Tj
+ET
+0. G
+0.200025 w
+0. G
+0.200025 w
+0.78 G
+0. w
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+30. 30. Td
+(Page 2 of 3) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 2020
+>>
+stream
+0. w
+0.78 G
+0.5 g
+0.78 G
+0. w
+0.5 g
+30. 752. 60. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+39.25 738.5 Td
+(Attribute) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+90. 752. 40. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+95.0499999999999972 738.5 Td
+(Identif) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+103.9000000000000057 727. Td
+(ier) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+130. 752. 60. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+150.0500000000000114 738.5 Td
+(Size) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+144.8000000000000114 727. Td
+(Range) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+190. 752. 40. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+197. 738.5 Td
+(Flags) Tj
+ET
+0.5 g
+0.78 G
+0. w
+0.5 g
+230. 752. 200. -33. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+1. g
+302.6000000000000227 738.5 Td
+(Description) Tj
+ET
+0. G
+0.200025 w
+0.96 g
+0.78 G
+0. w
+0.96 g
+30. 719. 60. -21.5 re
+f
+BT
+/F1 10 Tf
+11.5 TL
+0.314 g
+39.2999999999999972 705.5 Td
+(STREAM) Tj
+ET
+0.96 g
+0.78 G
+0. w
+0.96 g
+90. 719. 40. -21.5 re
+f
+0.96 g
+0.78 G
+0. w
+0.96 g
+130. 719. 60. -21.5 re
+f
+0.96 g
+0.78 G
+0. w
+0.96 g
+190. 719. 40. -21.5 re
+f
+0.96 g
+0.78 G
+0. w
+0.96 g
+230. 719. 200. -21.5 re
+f
+0. G
+0.200025 w
+0.78 G
+0. w
+0. G
+0.200025 w
+0. G
+0.200025 w
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0. g
+30. 677.5 Td
+(5. Overall Significance) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0. g
+30. 657.5 Td
+(The provided file system information, metadata details, and content layout offer critical insights into the) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0. g
+30. 643.5 Td
+(disk partition's structure and health. The NTFS attribute definitions further enhance the forensic analysis) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0. g
+30. 629.5 Td
+(by clarifying how file-related data is stored and managed. Understanding these details helps) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0. g
+30. 615.5 Td
+(investigators identify the partition, interpret file system artifacts, and prioritize areas for deeper analysis) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0. g
+30. 601.5 Td
+(in forensic investigations.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+30. 30. Td
+(Page 3 of 3) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R ]
+/Count 3
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+21 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+22 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 9 0 R
+/F2 10 0 R
+/F3 11 0 R
+/F4 12 0 R
+/F5 13 0 R
+/F6 14 0 R
+/F7 15 0 R
+/F8 16 0 R
+/F9 17 0 R
+/F10 18 0 R
+/F11 19 0 R
+/F12 20 0 R
+/F13 21 0 R
+/F14 22 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+23 0 obj
+<<
+/Producer (jsPDF 3.0.1)
+/CreationDate (D:20250401224118-04'00')
+>>
+endobj
+24 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 25
+0000000000 65535 f 
+0000022024 00000 n 
+0000023857 00000 n 
+0000000015 00000 n 
+0000000120 00000 n 
+0000004800 00000 n 
+0000004905 00000 n 
+0000019847 00000 n 
+0000019952 00000 n 
+0000022093 00000 n 
+0000022218 00000 n 
+0000022349 00000 n 
+0000022483 00000 n 
+0000022621 00000 n 
+0000022745 00000 n 
+0000022874 00000 n 
+0000023006 00000 n 
+0000023142 00000 n 
+0000023270 00000 n 
+0000023397 00000 n 
+0000023526 00000 n 
+0000023659 00000 n 
+0000023761 00000 n 
+0000024109 00000 n 
+0000024195 00000 n 
+trailer
+<<
+/Size 25
+/Root 24 0 R
+/Info 23 0 R
+/ID [ <7B3C88A82F5928CA313FDAD9F9F2C280> <7B3C88A82F5928CA313FDAD9F9F2C280> ]
+>>
+startxref
+24299
+%%EOF
