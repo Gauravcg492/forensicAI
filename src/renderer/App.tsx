@@ -43,8 +43,8 @@ function Hello() {
     // Render the analysis result
     return (
       <div>
-        <h1>Analysis Result</h1>
-        <p>{message}</p>
+      <h1>Analysis Result</h1>
+      <embed src={message} width="100%" height="600px" type="application/pdf" />
       </div>
     );
   }

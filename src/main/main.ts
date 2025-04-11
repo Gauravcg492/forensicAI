@@ -48,9 +48,8 @@ const sleep = (ms: number): Promise<void> => {
 };
 
 ipcMain.handle('analyze:file', async (_, filePath) => {
-  await sleep(20000);
-  analyze(filePath);
-  return 'Analysis complete';
+  const outputPath = analyze(filePath);
+  return outputPath;
 });
 
 if (process.env.NODE_ENV === 'production') {
@@ -97,6 +96,7 @@ const createWindow = async () => {
     height: 728,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      webSecurity: false,
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
