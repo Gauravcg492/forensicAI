@@ -1,9 +1,12 @@
 // jsonGenerator.js
 import OpenAI from "openai";
 import { readFile } from "fs/promises";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const openai = new OpenAI({
-  apiKey: "KEY", // Replace with your API key
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function generateJSON(promptFile = "./prompt.txt", mmls_ouput) {

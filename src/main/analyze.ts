@@ -1,7 +1,7 @@
 import path from 'path';
 import { exec } from 'child_process';
 import { generateJSON } from "./openai-gen";
-import { generateMMLSPDFReport } from './gen-pdf';
+import { generateMMLSPDFReport } from './utilities';
 
 /**
  * Executes the `mmls` command on the provided file path and returns the output.
@@ -38,7 +38,7 @@ export const analyze = async (filePath: string) => {
   try {
     console.log(`Analyzing file: ${filePath}`);
     const output = await runMmls(filePath);
-    const jsonData = await generateJSON(path.resolve(__dirname, "../../assets/prompt.txt"), output);
+    const jsonData = await generateJSON(path.resolve(__dirname, "../../assets/prompts/mmls.txt"), output);
     console.log('Generated JSON:', jsonData);
     // const reportPath = path.resolve(__dirname, "../../assets/report.pdf");
     const reportPath = "/tmp/report.pdf";
