@@ -19,7 +19,7 @@ Important Notes:
 Output Format:
 
 1. The final report must be in Markdown format (suitable for a Markdown parser or reader).
-2. Provide clear headings and subheadings, and detail the significance of every piece of data in the fsstat output.
+2. Provide clear headings and subheadings, and detail the significance of every piece of data in the fsstat, mmls and fls outputs.
 3. Include any tables, lists, or bullet points where necessary to improve readability.
 
 Outputs to analze:
