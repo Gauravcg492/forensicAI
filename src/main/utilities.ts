@@ -1,17 +1,15 @@
 // pdfGenerator.js
 import fs from "fs";
-import markdownpdf from "markdown-pdf";
+import { mdToPdf } from "md-to-pdf";
 
 
-export function generateMMLSPDFReport(mdData: string, outputPath: string) {
+export async function generateMMLSPDFReport(mdData: string, outputPath: string) {
     const mdPath = "/tmp/report.md";
     fs.writeFileSync(mdPath, mdData);
 
-    markdownpdf()
-        .from(mdPath)
-        .to(outputPath, () => {
-            console.log("PDF generated successfully");
-            // clean up temp file
-            fs.unlinkSync(mdPath);
-        });
+    const pdf = await mdToPdf({ path: mdPath }, { dest: outputPath, stylesheet: [] });
+
+    if (pdf) {
+      console.log("PDF generated successfully at:", outputPath);
+    }
 }
