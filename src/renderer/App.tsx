@@ -7,6 +7,7 @@ function Hello() {
   const [filePath, setFilePath] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [message, setMessage] = useState('');
+  const [customPrompt, setCustomPrompt] = useState('');
 
   const handleFileExplorer = async () => {
     // Use the secure API exposed by the preload script
@@ -19,9 +20,10 @@ function Hello() {
 
   const handleButton = async () => {
     console.log('Analyzing file:', filePath);
+    console.log('Custom Prompt:', customPrompt);
     if (filePath) {
       setIsAnalyzing(true);
-      window.electron.analyze(filePath).then((message) => {
+      window.electron.analyze(filePath, customPrompt).then((message) => {
         setMessage(message);
         setIsAnalyzing(false);
       });
@@ -42,6 +44,9 @@ function Hello() {
   if (message) {
     return (
       <div className="fullscreen-pdf">
+        <button type="button" onClick={() => setMessage('')} className="back-button">
+          Back
+        </button>
         <embed src={message} type="application/pdf" />
       </div>
     );
@@ -58,6 +63,13 @@ function Hello() {
           Browse File
         </button>
         <p>Selected File Path: {filePath}</p>
+        <textarea
+          placeholder="Enter custom prompt here..."
+          value={customPrompt}
+          onChange={(e) => setCustomPrompt(e.target.value)}
+          rows={4}
+          style={{ width: '100%', marginBottom: '10px' }}
+        />
         <button type="button" onClick={handleButton}>
           Analyze
         </button>

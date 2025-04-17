@@ -75,6 +75,23 @@ button:hover {
   opacity: 1;
 }
 
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #2980b9;
+}
+
 li {
   list-style: none;
 }

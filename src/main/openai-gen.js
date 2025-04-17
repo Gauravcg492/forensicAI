@@ -37,13 +37,18 @@ export async function getTskCmdsFromMMLS(promptFile, mmls_output, diskpath) {
   }
 }
 
-export async function getReport(promptFile, tmpReport) {
+export async function getReport(promptFile, tmpReport, customPrompt) {
   try {
     // Read the prompt from an external file named prompt.txt
     const result = await readFile(tmpReport, "utf8");
     const prompt = await readFile(promptFile, "utf8");
-    var customPrompt = prompt.replace("{{final_output}}", result);
-    console.log(customPrompt);
+    var newPrompt = prompt.replace("{{final_output}}", result);
+    if (customPrompt && customPrompt != '') {
+      newPrompt = newPrompt.replace("{{additional_task}}", "Focus analysis around these keywords: " + customPrompt);
+    }
+    console.log(newPrompt);
+    console.log("customPrompt:", customPrompt);
+    
 
     // Call the chat completions endpoint using the prompt from the file
     const response = await openai.chat.completions.create({
@@ -51,14 +56,15 @@ export async function getReport(promptFile, tmpReport) {
       messages: [
         {
           role: "user",
-          content: customPrompt,
+          content: newPrompt,
         },
       ],
     });
 
     // Extract and parse the JSON output from the response
-    const output = response.choices[0].message.content.trim();
-    console.log("Output:", output);
+    var output = response.choices[0].message.content.trim();
+    // console.log("Output:", output);
+    output += "\n\n# Appendix\n```" + result + "```";
     return output;
   } catch (error) {
     console.error("Error in generateJSON:", error);

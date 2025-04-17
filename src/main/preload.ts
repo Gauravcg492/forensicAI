@@ -23,8 +23,8 @@ const electronHandler = {
     },
   },
   openFile: () => ipcRenderer.invoke('dialog:openFile'),
-  analyze: (filePath: string) =>
-    ipcRenderer.invoke('analyze:file', filePath),
+  analyze: (filePath: string, customPrompt: string) =>
+    ipcRenderer.invoke('analyze:file', filePath, customPrompt),
 };
 
 contextBridge.exposeInMainWorld('electron', electronHandler);

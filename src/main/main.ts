@@ -50,8 +50,8 @@ const sleep = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-ipcMain.handle('analyze:file', async (_, filePath) => {
-  const outputPath = analyze(filePath);
+ipcMain.handle('analyze:file', async (_, filePath, customPrompt) => {
+  const outputPath = analyze(filePath, customPrompt);
   return outputPath;
 });
 

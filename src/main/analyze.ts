@@ -71,7 +71,7 @@ export const runCmds = (cmds: string): Promise<string[]> => {
  * Analyzes the given file by running the `mmls` command and processing its output.
  * @param filePath - The path to the disk image file.
  */
-export const analyze = async (filePath: string) => {
+export const analyze = async (filePath: string, customPrompt: string) => {
   try {
     const tmpReportPath = "/tmp/report.txt";
     fs.writeFileSync(tmpReportPath, "");
@@ -89,7 +89,8 @@ export const analyze = async (filePath: string) => {
     fs.appendFileSync(tmpReportPath, "\n\nFLS Outputs:\n" + results.join("\n"));
 
     const pdfPath = "/tmp/report.pdf";
-    const mdData = await getReport(path.resolve(__dirname, "../../assets/prompts/get_report.txt"), tmpReportPath);
+    var mdData = await getReport(path.resolve(__dirname, "../../assets/prompts/get_report.txt"), tmpReportPath, customPrompt);
+
     await generateMMLSPDFReport(mdData, pdfPath);
 
     return "file://" + pdfPath;
