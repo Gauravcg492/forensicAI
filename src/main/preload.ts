@@ -25,6 +25,8 @@ const electronHandler = {
   openFile: () => ipcRenderer.invoke('dialog:openFile'),
   analyze: (filePath: string, customPrompt: string) =>
     ipcRenderer.invoke('analyze:file', filePath, customPrompt),
+  onProgress: (callback: (msg: string) => void) => 
+    ipcRenderer.on('analysis-progress', (_, message) => callback(message))
 };
 
 contextBridge.exposeInMainWorld('electron', electronHandler);

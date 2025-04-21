@@ -71,7 +71,7 @@ export const runCmds = (cmds: string): Promise<string[]> => {
  * Analyzes the given file by running the `mmls` command and processing its output.
  * @param filePath - The path to the disk image file.
  */
-export const analyze = async (filePath: string, customPrompt: string) => {
+export const analyze = async (event: Electron.IpcMainInvokeEvent, filePath: string, customPrompt: string) => {
   try {
     const tmpReportPath = "/tmp/report.txt";
     fs.writeFileSync(tmpReportPath, "");
@@ -79,16 +79,20 @@ export const analyze = async (filePath: string, customPrompt: string) => {
     console.log(`Analyzing file: ${filePath}`);
     const output = await runMmls(filePath);
     fs.appendFileSync(tmpReportPath, "MMLS Ouput:\n" + output);
+    event.sender.send('analysis-progress', 'Completed mmls analysis!');
     
     const fsstat_cmds = await getTskCmdsFromMMLS(path.resolve(__dirname, "../../assets/prompts/get_fsstat.txt"), output, filePath);
     var results = await runCmds(fsstat_cmds);
     fs.appendFileSync(tmpReportPath, "\n\nFSSTAT Outputs:\n" + results.join("\n"));
+    event.sender.send('analysis-progress', 'Completed fsstat analysis!');
     
     const fls_cmds = await getTskCmdsFromMMLS(path.resolve(__dirname, "../../assets/prompts/get_fls.txt"), output, filePath);
     results = await runCmds(fls_cmds);
     fs.appendFileSync(tmpReportPath, "\n\nFLS Outputs:\n" + results.join("\n"));
+    event.sender.send('analysis-progress', 'Completed fls analysis!');
 
     const pdfPath = "/tmp/report.pdf";
+    event.sender.send('analysis-progress', 'All analysis completed! Generating Report...');
     var mdData = await getReport(path.resolve(__dirname, "../../assets/prompts/get_report.txt"), tmpReportPath, customPrompt);
 
     await generateMMLSPDFReport(mdData, pdfPath);

@@ -8,6 +8,7 @@ function Hello() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [message, setMessage] = useState('');
   const [customPrompt, setCustomPrompt] = useState('');
+  const [progress, setProgress] = useState<string[]>([]);
 
   const handleFileExplorer = async () => {
     // Use the secure API exposed by the preload script
@@ -23,6 +24,12 @@ function Hello() {
     console.log('Custom Prompt:', customPrompt);
     if (filePath) {
       setIsAnalyzing(true);
+      setProgress([]);
+
+      window.electron.onProgress((message: string) => {
+        setProgress(messages => [...messages, message]);
+      });
+
       window.electron.analyze(filePath, customPrompt).then((message) => {
         setMessage(message);
         setIsAnalyzing(false);
@@ -37,6 +44,16 @@ function Hello() {
         <h1>Analyzing...</h1>
         <div className="spinner"></div>
         <p>Please wait while the analysis is being performed.</p>
+        <div className="progress-container">
+          <div className="progress-bar"></div>
+        </div>
+        <div className="progress-messages">
+          {progress.map((msg, index) => (
+            <p key={index} className={`progress-text ${index === progress.length - 1 ? 'latest-message' : ''}`}style={{ animationDelay: `${index * 0.2}s` }}>
+              {msg}
+            </p>
+          ))}
+        </div>
       </div>
     );
   }

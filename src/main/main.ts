@@ -9,13 +9,19 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
+import dotenv from 'dotenv';
+
+// Load environment variables before any other imports
+dotenv.config({
+  path: path.join(__dirname, '../../.env')
+});
+
 import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 import { analyze } from './analyze';
-import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -50,8 +56,8 @@ const sleep = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-ipcMain.handle('analyze:file', async (_, filePath, customPrompt) => {
-  const outputPath = analyze(filePath, customPrompt);
+ipcMain.handle('analyze:file', async (event, filePath, customPrompt) => {
+  const outputPath = analyze(event, filePath, customPrompt);
   return outputPath;
 });
 
