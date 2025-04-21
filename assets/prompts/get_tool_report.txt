@@ -9,6 +9,7 @@ Tasks:
 2. Explain every digital forensics term used (e.g., “MFT,” “cluster size,” “metadata”), ensuring a novice can understand.
 3. Highlight and clearly flag anything suspicious or anomalous.
 4. Offer recommended next steps for follow-up investigation.
+{{additional_task}}
 
 Audience: A non-technical person with no digital forensics knowledge.
 
@@ -24,6 +25,8 @@ Output Format:
 2. Provide clear headings and subheadings, and detail the significance of every piece of data in the {{tool_name}} outputs.
 3. Include any tables, lists, or bullet points where necessary to improve readability.
 4. Make sure to be as detailed as possible and include as much data within sentences and paragraphs without ruining a narrative nature
+5. Do not include any introduction, overview or conclusion sections, just the analysis and next steps.
+6. Use the title {{title}}
 
 Outputs to analze:
 

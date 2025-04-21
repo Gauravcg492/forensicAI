@@ -47,15 +47,51 @@ export async function getTskCmdsFromMMLS(
   }
 }
 
+export async function getCmdReport(
+  promptFile: string,
+  toolName: string,
+  toolOutput: string,
+  customPrompt: string,
+  title: string): Promise<string> {
+    try {
+      const prompt: string = await readFile(promptFile, "utf8");
+      let newPrompt: string = prompt.replaceAll("{{tool_name}}", toolName);
+      newPrompt = newPrompt.replace("{{tool_output}}", toolOutput);
+      newPrompt = newPrompt.replace("{{title}}", title);
+  
+      if (customPrompt !== '') {
+        newPrompt = newPrompt.replace(
+          "{{additional_task}}",
+          "Focus analysis around these keywords: " + customPrompt
+        );
+      } else {
+        newPrompt = newPrompt.replace(
+          "{{additional_task}}",
+          ""
+        );
+      }
+      console.log(newPrompt);
+      console.log("customPrompt:", customPrompt);
+  
+      const output = await getOpenAIResponse(newPrompt);
+      return output;
+    } catch (error) {
+      console.error("Error in getReport:", error);
+      throw error;
+    }
+
+  }
+
 export async function getReport(
   promptFile: string,
-  tmpReport: string,
+  reports: string[],
+  tmpReportPath: string,
   customPrompt?: string
 ): Promise<string> {
   try {
-    const result: string = await readFile(tmpReport, "utf8");
+    const result: string = await readFile(tmpReportPath, "utf8");
     const prompt: string = await readFile(promptFile, "utf8");
-    let newPrompt: string = prompt.replace("{{final_output}}", result);
+    let newPrompt: string = prompt.replace("{{final_output}}", reports.join("\n\n"));
 
     if (customPrompt && customPrompt !== '') {
       newPrompt = newPrompt.replace(
