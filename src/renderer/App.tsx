@@ -1,5 +1,6 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
+import diskIcon from '../../assets/icons/disk.png';
 import './App.css';
 import { useState } from 'react';
 
@@ -9,6 +10,11 @@ function Hello() {
   const [message, setMessage] = useState('');
   const [customPrompt, setCustomPrompt] = useState('');
   const [progress, setProgress] = useState<string[]>([]);
+
+  window.electron.onProgress((message: string) => {
+    let messages = [...progress, message]
+    setProgress(messages.slice(-5))
+  });
 
   const handleFileExplorer = async () => {
     // Use the secure API exposed by the preload script
@@ -25,10 +31,6 @@ function Hello() {
     if (filePath) {
       setIsAnalyzing(true);
       setProgress([]);
-
-      window.electron.onProgress((message: string) => {
-        setProgress(messages => [...messages, message]);
-      });
 
       window.electron.analyze(filePath, customPrompt).then((message) => {
         setMessage(message);
@@ -72,21 +74,24 @@ function Hello() {
   return (
     <div>
       <div className="main">
-        <img width="200" alt="icon" src={icon} />
+        <img width="100" alt="icon" src={icon} />
+        <h1>Forensic AI</h1>
       </div>
-      <h1>Forensic AI</h1>
-      <div className="main">
-        <button type="button" onClick={handleFileExplorer}>
-          Browse File
-        </button>
-        <p>Selected File Path: {filePath}</p>
+      <div className="upload-container">
+        <div className="upload-box">
+          <img className='upload-icon' alt="icon" src={diskIcon} />
+          <p className="upload-text" style={{ margin: '5px'}}>{filePath || 'Select file to analyze'}</p>
+          <button type="button" className="upload-button" onClick={handleFileExplorer}>
+            Select from device
+          </button>
+        </div>
         <textarea
-          placeholder="Enter custom prompt here..."
-          value={customPrompt}
-          onChange={(e) => setCustomPrompt(e.target.value)}
-          rows={4}
-          style={{ width: '100%', marginBottom: '10px' }}
-        />
+            placeholder="Enter custom prompt here..."
+            value={customPrompt}
+            onChange={(e) => setCustomPrompt(e.target.value)}
+            rows={4}
+            style={{ width: '100%', marginBottom: '10px' }}
+          />
         <button type="button" onClick={handleButton}>
           Analyze
         </button>

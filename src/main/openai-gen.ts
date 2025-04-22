@@ -1,6 +1,6 @@
 // jsonGenerator.js
 import OpenAI from "openai";
-import { readFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
 import fs from 'fs';
 
 // Initialize OpenAI client
@@ -8,7 +8,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY ?? "", // Use environment variable instead of hardcoded key
 });
 
+const logFileName = '/tmp/ai-log.txt'
+
 async function getOpenAIResponse(prompt: string): Promise<string> {
+  let content = "Prompt: \n" + prompt
   const response = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [
@@ -23,7 +26,10 @@ async function getOpenAIResponse(prompt: string): Promise<string> {
     throw new Error("Invalid response from OpenAI API");
   }
 
-  return response.choices[0].message.content.trim();
+  const answer = response.choices[0].message.content.trim();
+  content += `\nAnswer:\n${answer}\n\n\n`
+  await writeFile(logFileName, content, { flag: 'a+' });
+  return answer
 }
 
 export async function getTskCmdsFromOutput(
@@ -85,14 +91,12 @@ export async function getCmdReport(
 export async function getReport(
   promptFile: string,
   reports: string[],
-  tmpReportPath: string,
-  customPrompt?: string
+  customPrompt: string
 ): Promise<string> {
   try {
-    const result: string = await readFile(tmpReportPath, "utf8");
     const prompt: string = await readFile(promptFile, "utf8");
     let newPrompt: string = prompt.replace("{{final_output}}", reports.join("\n\n"));
-
+    
     if (customPrompt && customPrompt !== '') {
       newPrompt = newPrompt.replace(
         "{{additional_task}}",
@@ -101,27 +105,27 @@ export async function getReport(
     }
     console.log(newPrompt);
     console.log("customPrompt:", customPrompt);
-
+    
     const output = await getOpenAIResponse(newPrompt);
-    return output + "\n\n# Appendix\n```" + result + "```";
+
+    const result: string = await readFile(logFileName, "utf8");
+    return output + "\n<br/>\n# Appendix\n```" + result + "```";
   } catch (error) {
     console.error("Error in getReport:", error);
     throw error;
   }
 }
 
-function encodeImageToBase64(filePath: string) {
-  const imageBuffer = fs.readFileSync(filePath);
-  return imageBuffer.toString("base64");
-}
-
-
 export async function analyzeImgs(filenames: string[]) {
-  const results: string[] = []
-  
+  const prompt = "Describe this image.";
+  const results: string[] = [];
+  let content = '';
+
   for (const path of filenames) {
     if (path.includes("jpg")) {
-        const base64Image = encodeImageToBase64(path);
+        const imageBuffer = fs.readFileSync(path);
+        const base64Image = imageBuffer.toString("base64");
+        content += `Filename:${path}, Prompt: ${prompt}\n`;
         try {
           const response = await openai.chat.completions.create({
             model: "gpt-4o",
@@ -129,7 +133,7 @@ export async function analyzeImgs(filenames: string[]) {
               {
                 role: "user",
                 content: [
-                  { type: "text", text: "Describe this image." },
+                  { type: "text", text:  prompt },
                   {
                     type: "image_url",
                     image_url: {
@@ -144,12 +148,16 @@ export async function analyzeImgs(filenames: string[]) {
           if (!response?.choices?.[0]?.message?.content) {
             throw new Error("Invalid response from OpenAI API");
           }
-          console.log("Image output", response.choices[0].message.content);
-          results.push("Filename: " + path + "\nDescription:" + response.choices[0].message.content);
+          const answer = response.choices[0].message.content
+          console.log("Image output", answer);
+          results.push("Filename: " + path + "\nDescription:" + answer);
+          content += `Answer:\n${answer}\n\n\n`;
         } catch(error) {
-          // continue
+          // ignore failed files
         }
     }
   }
+
+  await writeFile(logFileName, content, { flag: 'a+' });
   return results;
 }
