@@ -1,6 +1,6 @@
 import path from 'path';
 import { exec } from 'child_process';
-import { getTskCmdsFromOutput, getReport, getCmdReport, analyzeImgs } from "./openai-gen";
+import { getTskCmdsFromOutput, getReport, getCmdReport, analyzeImgs, changeAI } from "./gen-ai/gen-ai";
 import { generateMMLSPDFReport } from './utilities';
 
 /**
@@ -71,9 +71,9 @@ export const runCmds = (cmds: string): Promise<string[]> => {
  * Analyzes the given file by running the `mmls` command and processing its output.
  * @param filePath - The path to the disk image file.
  */
-export const analyze = async (event: Electron.IpcMainInvokeEvent, filePath: string, customPrompt: string) => {
+export const analyze = async (event: Electron.IpcMainInvokeEvent, ai: string, filePath: string, customPrompt: string) => {
   try {
-
+    changeAI(ai);
     // Run mmls and get report
     event.sender.send('analysis-progress', 'Started mmls analysis...');
     const output = await runMmls(filePath);

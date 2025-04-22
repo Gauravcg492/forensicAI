@@ -1,32 +1,34 @@
 // jsonGenerator.js
-import OpenAI from "openai";
 import { readFile, writeFile } from "fs/promises";
 import fs from 'fs';
+import { GPT } from "./gpt";
+import { Gemini } from "./gemini";
+import { AI } from "./ai";
 
 // Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY ?? "", // Use environment variable instead of hardcoded key
-});
+const gpt = new GPT(
+  process.env.OPENAI_API_KEY ?? ""
+);
+const gemini = new Gemini(
+  process.env.GEMINI_API_KEY ?? ""
+);
+
+let ai:AI = gpt;
+
+export function changeAI(aiName="gpt"): void {
+  if(aiName == "gemini") {
+    ai = gemini;
+  } else {
+    ai = gpt;
+  }
+}
 
 const logFileName = '/tmp/ai-log.txt'
 
 async function getOpenAIResponse(prompt: string): Promise<string> {
   let content = "Prompt: \n" + prompt
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o",
-    messages: [
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-  });
+  const answer = await ai.getResponse(prompt)
 
-  if (!response?.choices?.[0]?.message?.content) {
-    throw new Error("Invalid response from OpenAI API");
-  }
-
-  const answer = response.choices[0].message.content.trim();
   content += `\nAnswer:\n${answer}\n\n\n`
   await writeFile(logFileName, content, { flag: 'a+' });
   return answer
@@ -123,32 +125,9 @@ export async function analyzeImgs(filenames: string[]) {
 
   for (const path of filenames) {
     if (path.includes("jpg")) {
-        const imageBuffer = fs.readFileSync(path);
-        const base64Image = imageBuffer.toString("base64");
         content += `Filename:${path}, Prompt: ${prompt}\n`;
         try {
-          const response = await openai.chat.completions.create({
-            model: "gpt-4o",
-            messages: [
-              {
-                role: "user",
-                content: [
-                  { type: "text", text:  prompt },
-                  {
-                    type: "image_url",
-                    image_url: {
-                      url: `data:image/jpeg;base64,${base64Image}`,
-                    },
-                  },
-                ],
-              },
-            ],
-            max_tokens: 1000,
-          });
-          if (!response?.choices?.[0]?.message?.content) {
-            throw new Error("Invalid response from OpenAI API");
-          }
-          const answer = response.choices[0].message.content
+          const answer = await ai.getImgResponse(prompt, path);
           console.log("Image output", answer);
           results.push("Filename: " + path + "\nDescription:" + answer);
           content += `Answer:\n${answer}\n\n\n`;

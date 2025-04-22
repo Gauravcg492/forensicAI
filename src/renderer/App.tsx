@@ -10,6 +10,7 @@ function Hello() {
   const [message, setMessage] = useState('');
   const [customPrompt, setCustomPrompt] = useState('');
   const [progress, setProgress] = useState<string[]>([]);
+  const [ai, setAI] = useState('gpt');
 
   window.electron.onProgress((message: string) => {
     let messages = [...progress, message]
@@ -32,7 +33,7 @@ function Hello() {
       setIsAnalyzing(true);
       setProgress([]);
 
-      window.electron.analyze(filePath, customPrompt).then((message) => {
+      window.electron.analyze(ai, filePath, customPrompt).then((message) => {
         setMessage(message);
         setIsAnalyzing(false);
       });
@@ -73,6 +74,16 @@ function Hello() {
 
   return (
     <div>
+      <div className="ai-selector">
+        <select
+            value={ai}
+            onChange={(e) => setAI(e.target.value)}
+            className="ai-dropdown"
+          >
+          <option value="gpt">GPT</option>
+          <option value="gemini">Gemini</option>
+        </select>
+      </div>
       <div className="main">
         <img width="100" alt="icon" src={icon} />
         <h1>Forensic AI</h1>

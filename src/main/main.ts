@@ -52,8 +52,8 @@ ipcMain.handle('dialog:openFile', async () => {
   return result.filePaths[0]; // Return the selected file path
 });
 
-ipcMain.handle('analyze:file', async (event, filePath, customPrompt) => {
-  return analyze(event, filePath, customPrompt);
+ipcMain.handle('analyze:file', async (event, ai, filePath, customPrompt) => {
+  return analyze(event, ai, filePath, customPrompt);
 });
 
 if (process.env.NODE_ENV === 'production') {
