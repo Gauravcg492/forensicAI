@@ -8,7 +8,7 @@ Task:
 2. Use that information to write fsstat commands that help in moving the investigation forward
 
 Output Format and Strict Requirements:
-1. The only text you should return should be the fsstat commands filled with all the information needed to get a reliable output
+1. The only text you should return should be the fsstat commands filled with all the information needed to get a reliable output, no formatting
 2. Multiple commands should be separated by newlines
 3. The disk image to be used in the command should be {{path}}
 4. Include commands only for data partitions and ignore others
@@ -18,4 +18,4 @@ fsstat -o <offset> <path>
 
 Here is the mmls output you need to analyze:
 
-{{mmls_output}}
+{{output}}

@@ -15,15 +15,17 @@ Important notes:
 3. Do not exclude any image file
 
 Output Format and Strict Requirements:
-1. The only text you should return should be the icat commands filled with all the information needed to get a reliable output
+1. The only text you should return should be the icat commands filled with all the information needed to get a reliable output, no formatting
 2. Multiple commands should be separated by newlines
 3. The disk image to be used in the command should be {{path}}
 4. Include commands only for data partitions and ignore others
 
 Note: You should only return icat commands for images
-Here is an example output
-icat <disk-image-path> <inode-number>
+Here is an example output (pure plain text)
+icat -o <offset> <disk-image-path> <inode-number> > /tmp/<filename> 
+icat -o <offset> <disk-image-path> <inode-number> > /tmp/<filename>
+icat -o <offset> <disk-image-path> <inode-number> > /tmp/<filename> 
 
 Here is the fls output you need to analyze:
 
-{{fls_output}}
+{{output}}

@@ -1,7 +1,7 @@
 // jsonGenerator.js
 import OpenAI from "openai";
 import { readFile } from "fs/promises";
-import dotenv from "dotenv";
+import fs from 'fs';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -10,7 +10,7 @@ const openai = new OpenAI({
 
 async function getOpenAIResponse(prompt: string): Promise<string> {
   const response = await openai.chat.completions.create({
-    model: "gpt-4-turbo",
+    model: "gpt-4o",
     messages: [
       {
         role: "user",
@@ -26,21 +26,21 @@ async function getOpenAIResponse(prompt: string): Promise<string> {
   return response.choices[0].message.content.trim();
 }
 
-export async function getTskCmdsFromMMLS(
+export async function getTskCmdsFromOutput(
   promptFile: string,
-  mmls_output: string,
+  output: string,
   diskpath: string
 ): Promise<string> {
   try {
-    console.log("mmls_output:", mmls_output);
+    console.log("output:", output);
     const prompt: string = await readFile(promptFile, "utf8");
-    let customPrompt: string = prompt.replace("{{mmls_output}}", mmls_output);
+    let customPrompt: string = prompt.replace("{{output}}", output);
     customPrompt = customPrompt.replace("{{path}}", diskpath);
     console.log(customPrompt);
 
-    const output = await getOpenAIResponse(customPrompt);
-    console.log("Output:", output);
-    return output;
+    const result = await getOpenAIResponse(customPrompt);
+    console.log("Output:", result);
+    return result;
   } catch (error) {
     console.error("Error in getTskCmdsFromMMLS:", error);
     throw error;
@@ -108,4 +108,48 @@ export async function getReport(
     console.error("Error in getReport:", error);
     throw error;
   }
+}
+
+function encodeImageToBase64(filePath: string) {
+  const imageBuffer = fs.readFileSync(filePath);
+  return imageBuffer.toString("base64");
+}
+
+
+export async function analyzeImgs(filenames: string[]) {
+  const results: string[] = []
+  
+  for (const path of filenames) {
+    if (path.includes("jpg")) {
+        const base64Image = encodeImageToBase64(path);
+        try {
+          const response = await openai.chat.completions.create({
+            model: "gpt-4o",
+            messages: [
+              {
+                role: "user",
+                content: [
+                  { type: "text", text: "Describe this image." },
+                  {
+                    type: "image_url",
+                    image_url: {
+                      url: `data:image/jpeg;base64,${base64Image}`,
+                    },
+                  },
+                ],
+              },
+            ],
+            max_tokens: 1000,
+          });
+          if (!response?.choices?.[0]?.message?.content) {
+            throw new Error("Invalid response from OpenAI API");
+          }
+          console.log("Image output", response.choices[0].message.content);
+          results.push("Filename: " + path + "\nDescription:" + response.choices[0].message.content);
+        } catch(error) {
+          // continue
+        }
+    }
+  }
+  return results;
 }
