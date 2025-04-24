@@ -111,7 +111,7 @@ export async function getReport(
     const output = await getOpenAIResponse(newPrompt);
 
     const result: string = await readFile(logFileName, "utf8");
-    return output + "\n\n```\nAppendix\n" + result + "```";
+    return output + "\n\nAppendix\n```" + result + "```";
   } catch (error) {
     console.error("Error in getReport:", error);
     throw error;
