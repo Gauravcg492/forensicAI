@@ -31,6 +31,12 @@ export const runMmls = (filePath: string): Promise<string> => {
   });
 };
 
+/**
+ * Executes multiple TSK (The Sleuth Kit) commands sequentially and collects their outputs
+ * @param cmds - String containing multiple commands separated by newlines
+ * @returns Promise containing executed commands and their outputs
+ * 
+ */
 export const runCmds = (cmds: string): Promise<string[]> => {
   return new Promise(async (resolve, reject) => {
     try {
