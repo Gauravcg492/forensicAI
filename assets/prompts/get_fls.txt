@@ -1,0 +1,24 @@
+Context:
+You are an expert digital forensics investigator analyzing the output from the mmls function of The Sleuth Kit (TSK).
+Your goal is to generate fls commands that return details on files contained within the partitions highlighted by the mmls output
+
+Task:
+
+1. Understand the mmls output, partitions and their lengths
+2. Use that information to write fls commands that help in moving the investigation forward
+3. Use -r to recursively check within directories
+4. Don't specify the filesystem
+5. Ensure that all information provided is accurate and based on the given context. Avoid including any speculative or uncertain details.
+
+Output Format and Strict Requirements:
+1. The only text you should return should be the fls commands filled with all the information needed to get a reliable output, no formatting
+2. Multiple commands should be separated by newlines
+3. The disk image to be used in the command should be {{path}}
+4. Include commands only for data partitions and ignore others
+
+Here is an example output
+fls -o <offset> -r <path>
+
+Here is the mmls output you need to analyze:
+
+{{output}}
